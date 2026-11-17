@@ -1,0 +1,1735 @@
+{
+  "threshold": 0.5,
+  "slot_interval": 3,
+  "purpose": "Fixed historical policy; no threshold tuned on outer predictions",
+  "results": [
+    {
+      "method": "age_only",
+      "seed": 17,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 0,
+        "premature": 0,
+        "late": 0,
+        "no_inspection": 14
+      }
+    },
+    {
+      "method": "age_only",
+      "seed": 29,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 0,
+        "premature": 0,
+        "late": 0,
+        "no_inspection": 14
+      }
+    },
+    {
+      "method": "age_only",
+      "seed": 43,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 0,
+        "premature": 0,
+        "late": 0,
+        "no_inspection": 14
+      }
+    },
+    {
+      "method": "context",
+      "seed": 17,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 0,
+        "premature": 0,
+        "late": 0,
+        "no_inspection": 14
+      }
+    },
+    {
+      "method": "context",
+      "seed": 29,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 0,
+        "premature": 0,
+        "late": 0,
+        "no_inspection": 14
+      }
+    },
+    {
+      "method": "context",
+      "seed": 43,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 0,
+        "premature": 0,
+        "late": 0,
+        "no_inspection": 14
+      }
+    },
+    {
+      "method": "logistic",
+      "seed": 17,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": 51,
+          "outcome": "late",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 42,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": 123,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": 150,
+          "outcome": "late",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": 114,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 1,
+        "premature": 3,
+        "late": 2,
+        "no_inspection": 8
+      }
+    },
+    {
+      "method": "logistic",
+      "seed": 29,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": 51,
+          "outcome": "late",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 42,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": 123,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": 150,
+          "outcome": "late",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": 114,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 1,
+        "premature": 3,
+        "late": 2,
+        "no_inspection": 8
+      }
+    },
+    {
+      "method": "logistic",
+      "seed": 43,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": 51,
+          "outcome": "late",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 42,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": 123,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": 150,
+          "outcome": "late",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": 114,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 1,
+        "premature": 3,
+        "late": 2,
+        "no_inspection": 8
+      }
+    },
+    {
+      "method": "current_no_age",
+      "seed": 17,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": 51,
+          "outcome": "late",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 42,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": 123,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 1,
+        "premature": 2,
+        "late": 1,
+        "no_inspection": 10
+      }
+    },
+    {
+      "method": "current_no_age",
+      "seed": 29,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": 51,
+          "outcome": "late",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 42,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": 123,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 1,
+        "premature": 2,
+        "late": 1,
+        "no_inspection": 10
+      }
+    },
+    {
+      "method": "current_no_age",
+      "seed": 43,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": 51,
+          "outcome": "late",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 42,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": 123,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 1,
+        "premature": 2,
+        "late": 1,
+        "no_inspection": 10
+      }
+    },
+    {
+      "method": "fused",
+      "seed": 17,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 45,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": 123,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 2,
+        "premature": 1,
+        "late": 0,
+        "no_inspection": 11
+      }
+    },
+    {
+      "method": "fused",
+      "seed": 29,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 45,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": 123,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 2,
+        "premature": 1,
+        "late": 0,
+        "no_inspection": 11
+      }
+    },
+    {
+      "method": "fused",
+      "seed": 43,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 45,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": 123,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 2,
+        "premature": 1,
+        "late": 0,
+        "no_inspection": 11
+      }
+    },
+    {
+      "method": "mlp",
+      "seed": 17,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": 45,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 42,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": 123,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": 108,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": 108,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 2,
+        "premature": 4,
+        "late": 0,
+        "no_inspection": 8
+      }
+    },
+    {
+      "method": "mlp",
+      "seed": 29,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 48,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": 150,
+          "outcome": "late",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": 114,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 1,
+        "premature": 2,
+        "late": 1,
+        "no_inspection": 10
+      }
+    },
+    {
+      "method": "mlp",
+      "seed": 43,
+      "outcomes": [
+        {
+          "tool_id": 2,
+          "first_slot": 48,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 3,
+          "first_slot": 42,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 4,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 5,
+          "first_slot": 48,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 6,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 7,
+          "first_slot": 123,
+          "outcome": "timely",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 8,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 9,
+          "first_slot": 138,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 10,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 11,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": true
+        },
+        {
+          "tool_id": 101,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 102,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 103,
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "no_pre_damage_opportunity": false
+        },
+        {
+          "tool_id": 105,
+          "first_slot": 108,
+          "outcome": "premature",
+          "no_pre_damage_opportunity": false
+        }
+      ],
+      "summary": {
+        "timely": 2,
+        "premature": 4,
+        "late": 0,
+        "no_inspection": 8
+      }
+    }
+  ]
+}

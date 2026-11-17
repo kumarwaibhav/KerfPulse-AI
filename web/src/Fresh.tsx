@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { importCuts, cutTemplate, downloadEvidence } from './freshImport';
+import { SourceHealth } from './SourceHealth';
 
 async function call(path: string, body?: unknown) {
   const response = await fetch('/api/fresh/' + path, body === undefined ? {} : {
@@ -47,6 +48,7 @@ export function Fresh() {
     catch(e) { setErrors(String(e)); } finally { setBusy(false); }
   }
   return <section className="fresh-workspace">
+    <SourceHealth />
     <div className="panel" style={{ padding: 24, marginBottom: 20 }}>
       <span className="eyebrow">MEASURED EVIDENCE → MODEL → HUMAN REVIEW</span>
       <h2>Score a New Cut</h2><p>Submit compatible completed-cut summaries for a new tool identity. Future damage labels are excluded from the input.</p>

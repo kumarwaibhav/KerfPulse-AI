@@ -4,6 +4,7 @@ import json
 import uuid
 from pdm.fresh_model import assess, InputError
 from pdm.store import utcnow
+from pdm.qualification import QualificationRegistry
 
 
 class OperationalProcessing:
@@ -43,7 +44,9 @@ class OperationalProcessing:
                 result.update(state='superseded',reason='late_transport_event_no_retroactive_action')
             else:
                 try:
-                    assessment=assess(event)
+                    qualification=QualificationRegistry(self.store).resolve(conn,device,event)
+                    assessment=assess(event,qualification=qualification)
+                    assessment['qualification']=qualification
                     result.update(state='assessed' if assessment['applicability']=='assessed' else 'abstained',assessment_id=uuid.uuid4().hex,assessment=assessment)
                     # Receipt scope is authoritative; client declarations confer no qualification.
                     assessment['source_scope']={k:receipt[k] for k in ('org_id','site_id','asset_id','device_id')}

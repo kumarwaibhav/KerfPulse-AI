@@ -68,3 +68,21 @@ Actual PostgreSQL isolated-schema verification passed HTTP intake, worker absten
 Current full Python suite: 80 passed, one existing TestClient warning, 31.71 seconds. Browser rerun found CSV test racing schema readiness and asserting textarea text rather than value; corrected readiness/value assertions. Final browser outcome recorded in pipeline-stage-checkpoint.md. New research training metrics are not available; prior initial CUDA results are unchanged.
 
 Durable roadmap: docs/production/roadmap-ahead.md. Next critical path: memory-headroom recovery for full comparison/candidate evaluation, plus source/model qualification, customer identity and operator integration.
+
+
+## RAM inspection and research resume
+
+User authorized cleanup of unwanted processes. Inspection found about 4.2 GiB available physical RAM and 7.1 GiB free VRAM; no stale training/test processes needed termination. Active apps, operating-system services, tool services and Docker were preserved. Removed only the stale research lock after confirming its owner PID had exited. No working-set purge or cosmetic memory trimming performed.
+
+Resumed fingerprinted expanded comparison in artifacts/gpu-development-expanded-v3: age_only, context, logistic, current_no_age, fused and CUDA MLP; twenty configurations, seeds 17/29/43, eight grouped outer folds. Process session 80130 is being monitored in the active execution turn. Resource guard remains enabled. This is an expanded six-family comparison, not completion of all planned tree/temporal/independent-dataset experiments. Final outcome recorded after completion.
+
+RAM-stage checkpoint: all five linear/context model families completed their 24 outer fits each. CUDA MLP phase started; after CUDA initialization, observed available RAM remained about 3.4 GiB and GPU temperature 49 C. Expanded experiment remains in progress under its in-process resource guard; final metrics are not yet claimed. Session 80130 can be polled on continuation.
+
+
+## Completed expanded research and qualification milestone
+
+Expanded comparison finished; matched fingerprint resume verified. Acquisition-regret experiment completed. No supported superiority or policy benefit; retain existing release. Results/uncertainty and precise cohort differences in qualification-research-checkpoint.md and expanded-model-analysis.md. No training process remains running.
+
+Source registry, shadow-only release binding, fail-closed expiry/digest/profile/revocation, historical snapshots, explicit workspace read grants and source-health operator UI implemented. Actual PostgreSQL isolated-schema verification and eight browser scenarios passed; 84 Python tests passed before final diagnostic checks. No actual plant source qualified.
+
+Final qualification stage verification: 84 Python tests passed (24.69 s), eight browser scenarios passed (42.2 s), PostgreSQL isolated integration passed including granted operator source health. New source/tests/reports committed; archives refreshed. Full plan remains incomplete; no superiority, advisory release or factory commissioning claimed.

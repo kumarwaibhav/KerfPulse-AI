@@ -1,0 +1,58 @@
+{
+  "summary": {
+    "current": {
+      "timely": 0,
+      "premature": 5,
+      "late": 0,
+      "no_inspection": 9,
+      "acquisitions": 0,
+      "eligible_observations": 375,
+      "acquisition_fraction": 0.0
+    },
+    "fused": {
+      "timely": 0,
+      "premature": 5,
+      "late": 0,
+      "no_inspection": 9,
+      "acquisitions": 375,
+      "eligible_observations": 375,
+      "acquisition_fraction": 1.0
+    },
+    "periodic": {
+      "timely": 0,
+      "premature": 5,
+      "late": 0,
+      "no_inspection": 9,
+      "acquisitions": 92,
+      "eligible_observations": 375,
+      "acquisition_fraction": 0.24533333333333332
+    },
+    "random": {
+      "timely": 0,
+      "premature": 5,
+      "late": 0,
+      "no_inspection": 9,
+      "acquisitions": 76,
+      "eligible_observations": 375,
+      "acquisition_fraction": 0.20266666666666666
+    },
+    "regret_gate": {
+      "timely": 0,
+      "premature": 5,
+      "late": 0,
+      "no_inspection": 9,
+      "acquisitions": 29,
+      "eligible_observations": 375,
+      "acquisition_fraction": 0.07733333333333334
+    }
+  },
+  "eligible_cut_coverage": 0.3939075630252101,
+  "excluded_by_recipe_support": 577,
+  "gate_minus_periodic_acquisition_fraction_cluster_95_interval": [
+    -0.25,
+    -0.06581740976645435
+  ],
+  "replicates": 1993,
+  "qualification": "Conditional development evidence on few workpiece clusters. Acquisition differences do not establish maintenance benefit.",
+  "warning": "Illustrative threshold .05 and training-recipe support abstention; distinct from historical .5 policy. No compute, energy or avoided-downtime claim."
+}

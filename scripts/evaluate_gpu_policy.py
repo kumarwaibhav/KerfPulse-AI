@@ -29,7 +29,8 @@ def main():
                             'summary':{kind:sum(o['outcome']==kind for o in outcomes) for kind in ('timely','premature','late','no_inspection')}})
     result={'threshold':.5,'slot_interval':3,'purpose':'Fixed historical policy; no threshold tuned on outer predictions', 'results':results}
     atomic_json(args.directory/'fixed-policy-report.json',result)
-    print(json.dumps({r['method']:r['summary'] for r in results},indent=2))
+    print(json.dumps({method:{str(r['seed']):r['summary'] for r in results if r['method']==method}
+                      for method in report['methods']},indent=2))
 
 
 if __name__=='__main__': main()

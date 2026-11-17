@@ -1,0 +1,225 @@
+{
+  "n": 952,
+  "positive_cuts": 60,
+  "positive_rate": 0.06302521008403361,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "input_report_sha256": "fa63a9ade9994d2267a5c80bd626151ea3fa71ab58f0d6cf43ed65a4b653ee55",
+  "analysis_sha256": "8ff81642e86444cd18a1e48fdc8807a257f767c0b4d5502334721ea1b2ae164c",
+  "methods": {
+    "age_only": {
+      "average_precision_mean": 0.22656262834796134,
+      "average_precision_seed_range": [
+        0.22656262834796134,
+        0.22656262834796134
+      ],
+      "brier_mean": 0.06126691698743438,
+      "per_seed": [
+        {
+          "seed": 17,
+          "average_precision": 0.22656262834796134,
+          "brier": 0.061266916987434375
+        },
+        {
+          "seed": 29,
+          "average_precision": 0.22656262834796134,
+          "brier": 0.061266916987434375
+        },
+        {
+          "seed": 43,
+          "average_precision": 0.22656262834796134,
+          "brier": 0.061266916987434375
+        }
+      ],
+      "paired_vs_logistic": {
+        "ap_delta_95_interval": [
+          -0.388672648242279,
+          0.15512468833403467
+        ],
+        "valid_replicates": 1000,
+        "requested_replicates": 1000,
+        "clusters": 8,
+        "interpretation": "Paired connected-workpiece bootstrap, conditional development evidence; seeds averaged within each replicate"
+      }
+    },
+    "context": {
+      "average_precision_mean": 0.17408711704800792,
+      "average_precision_seed_range": [
+        0.1740871170480079,
+        0.1740871170480079
+      ],
+      "brier_mean": 0.059372663611696776,
+      "per_seed": [
+        {
+          "seed": 17,
+          "average_precision": 0.1740871170480079,
+          "brier": 0.059372663611696776
+        },
+        {
+          "seed": 29,
+          "average_precision": 0.1740871170480079,
+          "brier": 0.059372663611696776
+        },
+        {
+          "seed": 43,
+          "average_precision": 0.1740871170480079,
+          "brier": 0.059372663611696776
+        }
+      ],
+      "paired_vs_logistic": {
+        "ap_delta_95_interval": [
+          -0.3901970457326392,
+          0.06196505087114452
+        ],
+        "valid_replicates": 1000,
+        "requested_replicates": 1000,
+        "clusters": 8,
+        "interpretation": "Paired connected-workpiece bootstrap, conditional development evidence; seeds averaged within each replicate"
+      }
+    },
+    "logistic": {
+      "average_precision_mean": 0.3251529298463959,
+      "average_precision_seed_range": [
+        0.3251529298463959,
+        0.3251529298463959
+      ],
+      "brier_mean": 0.050969609740694206,
+      "per_seed": [
+        {
+          "seed": 17,
+          "average_precision": 0.3251529298463959,
+          "brier": 0.050969609740694206
+        },
+        {
+          "seed": 29,
+          "average_precision": 0.3251529298463959,
+          "brier": 0.050969609740694206
+        },
+        {
+          "seed": 43,
+          "average_precision": 0.3251529298463959,
+          "brier": 0.050969609740694206
+        }
+      ],
+      "paired_vs_logistic": {
+        "ap_delta_95_interval": [
+          0.0,
+          0.0
+        ],
+        "valid_replicates": 1000,
+        "requested_replicates": 1000,
+        "clusters": 8,
+        "interpretation": "Paired connected-workpiece bootstrap, conditional development evidence; seeds averaged within each replicate"
+      }
+    },
+    "current_no_age": {
+      "average_precision_mean": 0.33808458657986495,
+      "average_precision_seed_range": [
+        0.33808458657986495,
+        0.33808458657986495
+      ],
+      "brier_mean": 0.04967375627803309,
+      "per_seed": [
+        {
+          "seed": 17,
+          "average_precision": 0.33808458657986495,
+          "brier": 0.049673756278033096
+        },
+        {
+          "seed": 29,
+          "average_precision": 0.33808458657986495,
+          "brier": 0.049673756278033096
+        },
+        {
+          "seed": 43,
+          "average_precision": 0.33808458657986495,
+          "brier": 0.049673756278033096
+        }
+      ],
+      "paired_vs_logistic": {
+        "ap_delta_95_interval": [
+          -0.010236776320810362,
+          0.06501837504600352
+        ],
+        "valid_replicates": 1000,
+        "requested_replicates": 1000,
+        "clusters": 8,
+        "interpretation": "Paired connected-workpiece bootstrap, conditional development evidence; seeds averaged within each replicate"
+      }
+    },
+    "fused": {
+      "average_precision_mean": 0.35314158846595606,
+      "average_precision_seed_range": [
+        0.353141588465956,
+        0.353141588465956
+      ],
+      "brier_mean": 0.0486740148267245,
+      "per_seed": [
+        {
+          "seed": 17,
+          "average_precision": 0.353141588465956,
+          "brier": 0.0486740148267245
+        },
+        {
+          "seed": 29,
+          "average_precision": 0.353141588465956,
+          "brier": 0.0486740148267245
+        },
+        {
+          "seed": 43,
+          "average_precision": 0.353141588465956,
+          "brier": 0.0486740148267245
+        }
+      ],
+      "paired_vs_logistic": {
+        "ap_delta_95_interval": [
+          -0.1641868650520747,
+          0.11400914751927416
+        ],
+        "valid_replicates": 1000,
+        "requested_replicates": 1000,
+        "clusters": 8,
+        "interpretation": "Paired connected-workpiece bootstrap, conditional development evidence; seeds averaged within each replicate"
+      }
+    },
+    "mlp": {
+      "average_precision_mean": 0.3218469152463744,
+      "average_precision_seed_range": [
+        0.2861276824593201,
+        0.3898194771475435
+      ],
+      "brier_mean": 0.06252112297842914,
+      "per_seed": [
+        {
+          "seed": 17,
+          "average_precision": 0.28959358613225955,
+          "brier": 0.06667105474725449
+        },
+        {
+          "seed": 29,
+          "average_precision": 0.3898194771475435,
+          "brier": 0.060696293708505294
+        },
+        {
+          "seed": 43,
+          "average_precision": 0.2861276824593201,
+          "brier": 0.060196020479527615
+        }
+      ],
+      "paired_vs_logistic": {
+        "ap_delta_95_interval": [
+          -0.23904457220113615,
+          0.12209399937032624
+        ],
+        "valid_replicates": 1000,
+        "requested_replicates": 1000,
+        "clusters": 8,
+        "interpretation": "Paired connected-workpiece bootstrap, conditional development evidence; seeds averaged within each replicate"
+      }
+    }
+  },
+  "qualification": "Previously explored single-machine development data. No independent confirmation, plant-validity or superiority claim."
+}

@@ -26,3 +26,5 @@ The fresh release is a transparent baseline, not a demonstrated novel algorithm.
 Latest implementation: [CUDA research checkpoint](cuda-research-checkpoint.md), [execution ledger](execution-ledger.md), and [device intake contract](device-ingest-stage.md). These supersede earlier statements that authenticated HTTP intake is entirely absent; source qualification and operational inference remain incomplete.
 
 Next pathway: [roadmap ahead](roadmap-ahead.md). Current processing and research work: [pipeline-stage checkpoint](pipeline-stage-checkpoint.md).
+
+Latest completed milestone: [qualification/research checkpoint](qualification-research-checkpoint.md), [source qualification guide](source-qualification-guide.md), [expanded comparison with uncertainty](expanded-model-analysis.md).

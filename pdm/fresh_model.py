@@ -28,7 +28,7 @@ def release():
     return json.loads(content), manifest
 
 
-def assess(event):
+def assess(event, *, qualification=None):
     if not isinstance(event, dict):
         raise InputError("event", "Expected a feature event object")
     allowed = {"event_id", "asset_id", "tool_life_id", "sequence_number", "cut_completed_at", "source_mode",
@@ -94,9 +94,11 @@ def assess(event):
         result.update(applicability="insufficient_evidence", reason_codes=["missing_current_channels"])
         return result
     recipe = [context[key] for key in RECIPE_FIELDS]
+    qualified_shadow = (qualification is not None and qualification.get('eligible') is True and
+                        qualification.get('state')=='shadow_approved' and qualification.get('profile',{}).get('model_digest')==manifest['digest'])
     if (event["feature_schema_version"] != manifest["feature_schema_version"] or
             event["sensor_profile_version"] != manifest["sensor_profile_version"] or
-            recipe not in manifest["supported_recipes"] or event["data_origin"] == "user-measured"):
+            recipe not in manifest["supported_recipes"] or event["data_origin"] == "user-measured" and not qualified_shadow):
         result.update(applicability="unsupported_domain", reason_codes=["sensor_or_domain_qualification_pending"])
         return result
     if age > 300:
@@ -112,6 +114,10 @@ def assess(event):
     result["inspection_slot"] = slot
     result["actionable_score"] = sum(probability[slot - cycle + 1:slot - cycle + 5])
     result["action"] = "review_recommended" if result["actionable_score"] >= .5 else "monitor"
+    if qualified_shadow:
+        result["action"] = "shadow_only"
+        result["reason_codes"] = ["shadow_evaluation_only_no_operational_recommendation"]
+        return result
     result["reason_codes"] = ["engineering_demonstration", "monitor_is_not_safety_clearance"]
     return result
 

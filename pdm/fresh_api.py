@@ -7,6 +7,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, ConfigDict, Field
 
 from pdm.fresh_model import assess, input_schema, InputError
+from pdm.qualification import QualificationRegistry
 
 
 def initialize_fresh(store):
@@ -41,6 +42,11 @@ class Review(BaseModel):
 
 def build_router(store, session, planner):
     router = APIRouter(prefix="/api/fresh")
+
+    @router.get('/source-health')
+    def source_health(owner=Depends(session)):
+        return {'workspace_id':owner['id'],'sources':QualificationRegistry(store).health(owner['id']),
+                'access':'Explicit local-admin source grants; customer OIDC remains pending'}
 
     def get(connection, owner, key):
         row = store.execute(connection, "SELECT * FROM fresh_assessments WHERE owner=? AND id=?", (owner, key)).fetchone()

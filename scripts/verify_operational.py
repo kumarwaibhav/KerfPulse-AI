@@ -17,6 +17,9 @@ import uuid
 from pdm.store import Store
 from pdm.device_ingest import DeviceIngest
 from pdm.fresh_model import input_schema
+from pdm.fresh_model import release
+from pdm.qualification import QualificationRegistry
+from datetime import datetime,timedelta,timezone
 
 
 def main():
@@ -62,8 +65,38 @@ def main():
             assert first=='id: '+str(batch['cursor'])
         with temporary.transaction() as conn:
             assert temporary.execute(conn,'SELECT count(*) AS n FROM operational_assessments').fetchone()['n']==1
+        registry=QualificationRegistry(temporary)
+        _,manifest=release()
+        profile={'feature_schema_version':event['feature_schema_version'],'sensor_profile_version':event['sensor_profile_version'],
+                 'extractor_version':'isolated-publisher-fixture-v1','model_digest':manifest['digest']}
+        expiry=(datetime.now(timezone.utc)+timedelta(hours=1)).isoformat()
+        qualification=registry.record(source['device_id'],'shadow_approved',profile,'isolated-test','Protocol fixture only, no physical qualification',expiry)
+        second=request('/api/v2/ingest/cuts',{**envelope,'sequence':2,'event':{**event,'event_id':'shadow-fixture'}})
+        for _ in range(100):
+            shadow=request('/api/v2/receipts/'+second['id'])
+            if shadow['inference_status']!='not_started':break
+            time.sleep(.1)
+        assert shadow['processing']['assessment']['action']=='shadow_only'
+        assert shadow['processing']['assessment']['qualification']['id']==qualification['id']
+        registry.record(source['device_id'],'revoked',profile,'isolated-test','Fixture qualification withdrawn',expiry)
+        third=request('/api/v2/ingest/cuts',{**envelope,'sequence':3,'event':{**event,'event_id':'revoked-fixture'}})
+        for _ in range(100):
+            revoked=request('/api/v2/receipts/'+third['id'])
+            if revoked['inference_status']!='not_started':break
+            time.sleep(.1)
+        assert revoked['processing']['assessment']['five_cut_score'] is None
+        assert request('/api/v2/receipts/'+second['id'])['processing']==shadow['processing']
+        browser_token=uuid.uuid4().hex+uuid.uuid4().hex
+        workspace=temporary.create_session(browser_token)
+        registry.grant(workspace['id'],source['device_id'])
+        with urlopen(Request(root+'/api/fresh/source-health',headers={'Cookie':'pdm_session='+browser_token}),timeout=5) as response:
+            health=json.load(response)
+        assert len(health['sources'])==1 and health['sources'][0]['qualification']['state']=='revoked'
+        assert health['sources'][0]['processing']['assessment']['five_cut_score'] is None
+        assert 'source_not_qualified' in health['sources'][0]['reason_codes']
         print(json.dumps({'database':'postgresql','isolation':'unique temporary schema, removed after test','http_ingest':'passed','worker_abstention':'passed',
-                          'idempotent_assessment':'passed','cursor_catchup':'passed','sse_delivery':'passed','qualification':'not physically commissioned'}))
+                          'idempotent_assessment':'passed','cursor_catchup':'passed','sse_delivery':'passed','shadow_binding':'passed',
+                          'qualification_revocation':'passed','historical_lineage':'passed','operator_source_health':'passed','qualification':'not physically commissioned'}))
     finally:
         for process in (api,worker):
             if process is not None:

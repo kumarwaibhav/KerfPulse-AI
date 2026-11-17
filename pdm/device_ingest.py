@@ -100,6 +100,8 @@ class DeviceIngest:
                 self.store.execute(connection, statement)
         from pdm.operational_processing import OperationalProcessing
         OperationalProcessing(self.store).initialize()
+        from pdm.qualification import QualificationRegistry
+        QualificationRegistry(self.store).initialize()
 
     @staticmethod
     def _token(device_id):
