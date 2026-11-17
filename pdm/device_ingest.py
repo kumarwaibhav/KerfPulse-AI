@@ -98,6 +98,8 @@ class DeviceIngest:
                 self.store.execute(connection, "SELECT pg_advisory_xact_lock(529418, 3)")
             for statement in statements:
                 self.store.execute(connection, statement)
+        from pdm.operational_processing import OperationalProcessing
+        OperationalProcessing(self.store).initialize()
 
     @staticmethod
     def _token(device_id):
@@ -200,4 +202,18 @@ class DeviceIngest:
             row = self.store.execute(connection, "SELECT * FROM ingest_receipts WHERE id=? AND device_id=?", (receipt_id, device["id"])).fetchone()
             if row is None:
                 return None
-            return {**self._receipt(row), "envelope": json.loads(row["envelope"])}
+            result = {**self._receipt(row), "envelope": json.loads(row["envelope"])}
+            processed = self.store.execute(connection, "SELECT payload FROM operational_processing WHERE receipt_id=?", (receipt_id,)).fetchone()
+            if processed:
+                value = json.loads(processed["payload"])
+                result.update(inference_status=value["state"], processing=value)
+            return result
+
+    def events(self, token, after=0):
+        if type(after) is not int or not 0<=after<=MAX_SEQUENCE:
+            raise StoreError('Invalid event cursor')
+        with self.store.transaction() as connection:
+            device=self._authenticate(connection,token)
+            rows=self.store.execute(connection,'SELECT id,payload FROM operational_outbox WHERE device_id=? AND id>? ORDER BY id LIMIT 100',(device['id'],after)).fetchall()
+            return {'events':[{'id':row['id'],'data':json.loads(row['payload'])} for row in rows],
+                    'cursor':rows[-1]['id'] if rows else after}

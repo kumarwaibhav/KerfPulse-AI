@@ -1,0 +1,10 @@
+{
+  "database": "postgresql",
+  "isolation": "unique temporary schema, removed after test",
+  "http_ingest": "passed",
+  "worker_abstention": "passed",
+  "idempotent_assessment": "passed",
+  "cursor_catchup": "passed",
+  "sse_delivery": "passed",
+  "qualification": "not physically commissioned"
+}

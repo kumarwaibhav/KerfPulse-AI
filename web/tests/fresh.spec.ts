@@ -66,8 +66,9 @@ test('CSV partial validation, dismissal, templates and request failure recover v
   const bad = { ...flattened, event_id: 'invalid-second-row', HardnessMean: '' };
   const quote = (v: unknown) => '"' + String(v ?? '').replaceAll('"', '""') + '"';
   const csv = [columns.map(quote).join(','), ...[flattened, bad].map(row => columns.map(key => quote(row[key])).join(','))].join('\r\n');
+  await expect(page.getByLabel('Upload measured file')).toBeEnabled();
   await page.getByLabel('Upload measured file').setInputFiles({ name: 'cuts.csv', mimeType: 'text/csv', buffer: Buffer.from(csv) });
-  await expect(page.getByLabel('Completed-cut JSON')).toContainText('invalid-second-row');
+  await expect(page.getByLabel('Completed-cut JSON')).toHaveValue(/invalid-second-row/);
   await page.getByRole('button', { name: 'Validate and score', exact: true }).click();
   await expect(page.getByRole('alert')).toContainText('Row 2 · context');
   const card = page.locator('.fresh-workspace article');

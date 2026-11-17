@@ -1,4 +1,5 @@
 from pdm.gpu_benchmark import prepare, partitions, names_for, candidates
+import pytest
 
 
 def test_group_splits_and_age_ablation():
@@ -12,3 +13,8 @@ def test_group_splits_and_age_ablation():
     assert 'NumberOfCycle' not in names_for(rows[0][0], 'current_no_age')
     assert len(candidates('xgboost',20)) == 20
     assert len({str(c) for c in candidates('xgboost',20)}) == 20
+
+
+def test_search_space_limits_fail_instead_of_looping_forever():
+    for method,count in [('random_forest',49),('xgboost',82),('mlp',82),('logistic',0)]:
+        with pytest.raises(ValueError):candidates(method,count)

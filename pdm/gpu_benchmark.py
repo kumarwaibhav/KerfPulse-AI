@@ -44,6 +44,9 @@ def partitions(rows, groups, protocol):
 
 
 def candidates(method, count):
+    if count<1:raise ValueError('At least one candidate required')
+    maximum={'xgboost':81,'random_forest':48,'mlp':81}.get(method)
+    if maximum is not None and count>maximum:raise ValueError('Requested candidates exceed unique search space')
     rng = random.Random(17)
     if method in ('age_only','context','logistic','current_no_age','fused'):
         return [{'C': float(v)} for v in np.geomspace(.001,10,count)]
@@ -124,10 +127,15 @@ def fit_predict(method, config, x, y, ids, xt, seed, guard):
 
 def run(args):
     from sklearn.metrics import average_precision_score, brier_score_loss
+    if len(set(args.methods))!=len(args.methods) or len(set(args.seeds))!=len(args.seeds):
+        raise ValueError('Model families and seeds must be unique')
     rows, groups = prepare()
     directory = args.output
+    from pdm.experiment_provenance import fingerprint
+    folds=list(partitions(rows,groups,args.protocol))
     signature = {'source_sha256':SOURCE_SHA256,'protocol':args.protocol,'methods':args.methods,'trials':args.trials,'seeds':args.seeds,
-                 'runner_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
+                 'runner_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                 'provenance':fingerprint(rows,groups,folds,args.methods)}
     directory.mkdir(parents=True,exist_ok=True)
     if (directory/'configuration.json').exists() and json.loads((directory/'configuration.json').read_text()) != signature:
         raise ValueError('Resume configuration differs; use a new output directory')
@@ -140,7 +148,7 @@ def run(args):
             x = np.asarray([vector(c,names) for c,_ in rows],dtype=np.float32)
             y = np.asarray([min(r,9)-1 for _,r in rows])
             ids = [c.tool_id for c,_ in rows]
-            for fold,(train,test,key) in enumerate(partitions(rows,groups,args.protocol)):
+            for fold,(train,test,key) in enumerate(folds):
                 for seed in args.seeds:
                     path = directory/f'{method}-fold{fold}-seed{seed}.json'
                     if path.exists():
@@ -179,7 +187,7 @@ def run(args):
                                'brier':float(brier_score_loss(target,scores))})
             metrics[method] = values
         report = {**signature,'metrics':metrics,'interpretation':'Nested grouped development evidence on previously explored benchmark; no factory or superiority claim',
-                  'resume':'Completed folds and trials reused only with identical configuration/code hash; interrupted trial restarts deterministically'}
+              'resume':'Completed folds/trials require identical data, splits, code and environment; interrupted trial restarts with same seed, without bitwise GPU determinism guarantee'}
         atomic_json(directory/'report.json',report)
         print(json.dumps(report,indent=2))
 

@@ -53,3 +53,12 @@ docker compose cp api:/home/app/device-credentials/mill-1.json artifacts/private
 ```
 
 The output path must not already exist. Provisioning is local trusted administration, not customer identity authorization. Protect that private file using the host's access controls; do not commit or distribute it. Genuine compatible observations can be queued using EdgeSpool and delivered with flush_http; no benchmark example should be relabelled as actual field evidence. Current ingest records remain unqualified and inference is not started.
+
+
+## Durable inference-consumer stage
+
+The Compose assessment-worker now consumes operational receipts. Its result and durable event outbox commit atomically. Device-scoped receipt GET reports processing state and assessment/abstention. /api/v2/events returns bounded cursor catch-up, while /api/v2/events/stream emits authorized SSE with cursor recovery and repeated credential checks. Raw input retention is separate from these notifications.
+
+Semantic event identity is device plus event_id: identical events carried under another transport sequence reuse the assessment; changed semantic evidence is quarantined in processing without replacing the original. Out-of-order and revoked pending sources cannot produce fresh advice. Model contract failures become explicit rejected records; database failures roll back and retry.
+
+Current user-measured evidence remains unqualified, so successful processing normally reports abstained/unsupported_domain with no score. This is processing completion, not a physical-source approval. Customer role-scoped browser views, source qualification/promotion, operational retention/capacity, and authenticated MQTT remain pending.

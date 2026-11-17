@@ -24,3 +24,5 @@ The fresh release is a transparent baseline, not a demonstrated novel algorithm.
 [Current-stage audit](audit-current-stage.md) includes feature inventory and exact source locations for remaining findings. The evidence/ directory contains aggregate load, dependency, pool and restore receipts plus the release manifest and desktop screenshot; private record payloads/backups are excluded.
 
 Latest implementation: [CUDA research checkpoint](cuda-research-checkpoint.md), [execution ledger](execution-ledger.md), and [device intake contract](device-ingest-stage.md). These supersede earlier statements that authenticated HTTP intake is entirely absent; source qualification and operational inference remain incomplete.
+
+Next pathway: [roadmap ahead](roadmap-ahead.md). Current processing and research work: [pipeline-stage checkpoint](pipeline-stage-checkpoint.md).

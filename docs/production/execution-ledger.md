@@ -53,3 +53,18 @@ Final current Python suite: 73 passed, one existing TestClient deprecation warni
 Resume note: trial restart uses the same seed/configuration, not a promise of bitwise GPU determinism. Add complete loader/environment/split fingerprints before the full matrix; current runner pins source CSV and its own code but other dependency-code changes are not included in its resume fingerprint. Research artifacts stay development-only.
 
 Next: harden experiment fingerprints and full preregistered search; complete raw dataset acquisition/causal feature parity; implement source qualification and durable inference consumer before live assessed state. Existing source and showcase ZIPs are regenerated for this checkpoint, but their model assets retain the previous engineering release because new models did not pass promotion.
+
+
+## Roadmap and durable operational processing stage
+
+Implemented full experiment identity (observations/labels, source code, split/feature layout, dependency/runtime settings and GPU/driver identity). Search-space exhaustion and repeated-family/seed inputs fail explicitly instead of risking infinite loops or duplicate evaluation counts.
+
+Added calendar-conditioned acquisition primitive and nested training-only cross-fitted regret experiment, with lazy optional test features, hard prefix budget and recipe abstention. Primitive tests passed; complete candidate training/evaluation is pending. Full expanded training attempted but safely paused below 2 GiB RAM reserve; only that paused research process was stopped. No user applications or WSL were terminated.
+
+Added transactional operational receipt consumer, semantic deduplication, conflict retention, revoked/late-source blocking, one assessment effect, durable outbox and device-scoped cursor/SSE. Injected outbox failure rolls back assessment and retries cleanly. Added assessment-worker Compose service with heartbeat health check. Unqualified plant input remains unavailable-score abstention.
+
+Actual PostgreSQL isolated-schema verification passed HTTP intake, worker abstention, idempotent assessment, cursor catch-up and SSE delivery. Source fixture records stayed outside public operational tables; temporary schema was removed. Fixed existing fresh-schema introspection to use current_schema().
+
+Current full Python suite: 80 passed, one existing TestClient warning, 31.71 seconds. Browser rerun found CSV test racing schema readiness and asserting textarea text rather than value; corrected readiness/value assertions. Final browser outcome recorded in pipeline-stage-checkpoint.md. New research training metrics are not available; prior initial CUDA results are unchanged.
+
+Durable roadmap: docs/production/roadmap-ahead.md. Next critical path: memory-headroom recovery for full comparison/candidate evaluation, plus source/model qualification, customer identity and operator integration.

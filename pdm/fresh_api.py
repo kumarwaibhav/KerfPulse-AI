@@ -15,7 +15,7 @@ def initialize_fresh(store):
             store.execute(connection, "SELECT pg_advisory_xact_lock(529418, 2)")
         store.execute(connection, "CREATE TABLE IF NOT EXISTS fresh_assessments (id TEXT PRIMARY KEY, owner TEXT NOT NULL, event_id TEXT NOT NULL, digest TEXT NOT NULL, payload TEXT NOT NULL, evidence TEXT NOT NULL, UNIQUE(owner,event_id))")
         # Additive upgrade retains assessments created before the ordered-history column.
-        columns = store.execute(connection, "SELECT column_name AS name FROM information_schema.columns WHERE table_schema='public' AND table_name='fresh_assessments'").fetchall() if store.postgres else connection.execute("PRAGMA table_info(fresh_assessments)").fetchall()
+        columns = store.execute(connection, "SELECT column_name AS name FROM information_schema.columns WHERE table_schema=current_schema() AND table_name='fresh_assessments'").fetchall() if store.postgres else connection.execute("PRAGMA table_info(fresh_assessments)").fetchall()
         if "created_at" not in {row["name"] for row in columns}:
             store.execute(connection, "ALTER TABLE fresh_assessments ADD COLUMN created_at TEXT NOT NULL DEFAULT ''")
             for row in store.execute(connection, "SELECT id,payload FROM fresh_assessments").fetchall():

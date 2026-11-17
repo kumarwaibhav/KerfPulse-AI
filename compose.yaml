@@ -60,6 +60,20 @@ services:
       api:
         condition: service_healthy
     restart: unless-stopped
+  assessment-worker:
+    image: kerfpulse:local
+    pull_policy: never
+    command: ["python", "-m", "pdm.operational_worker"]
+    environment: *runtime
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "from pdm.store import Store; from datetime import datetime,timezone; s=Store(); v=s.health().get('assessment_worker_at'); s.close(); assert v and 0 <= (datetime.now(timezone.utc)-datetime.fromisoformat(v)).total_seconds() < 30"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
 volumes:
   postgres-data:
   mqtt-data:
