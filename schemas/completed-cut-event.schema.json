@@ -1,0 +1,492 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KerfPulse completed-cut event v1",
+  "description": "Transport schema. Server separately validates freshness, sequence equality, qualification and feasible break horizons. Missing feature channels are valid transport but produce insufficient_evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "asset_id",
+    "tool_life_id",
+    "sequence_number",
+    "cut_completed_at",
+    "source_mode",
+    "clock_basis",
+    "data_origin",
+    "feature_schema_version",
+    "sensor_profile_version",
+    "context",
+    "features"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[^\\u0000-\\u001f]+$"
+    },
+    "asset_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[^\\u0000-\\u001f]+$"
+    },
+    "tool_life_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[^\\u0000-\\u001f]+$"
+    },
+    "sequence_number": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100000
+    },
+    "cut_completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_mode": {
+      "enum": [
+        "uploaded",
+        "protocol_fixture"
+      ]
+    },
+    "clock_basis": {
+      "enum": [
+        "observed",
+        "demonstration"
+      ]
+    },
+    "data_origin": {
+      "enum": [
+        "haas-benchmark-example",
+        "user-measured"
+      ]
+    },
+    "feature_schema_version": {
+      "type": "string"
+    },
+    "sensor_profile_version": {
+      "type": "string"
+    },
+    "inspection_breaks": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "NumberOfCycle",
+        "HardnessMean",
+        "MillingToolType",
+        "ADOC",
+        "RDOC",
+        "ToolHolderLength"
+      ],
+      "properties": {
+        "NumberOfCycle": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "HardnessMean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "MillingToolType": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "ADOC": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "RDOC": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "ToolHolderLength": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Current - Driving axle X L1 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L1 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L1 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L1 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L1 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L1 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L2 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L2 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L2 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L2 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L2 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L2 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L3 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L3 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L3 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L3 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L3 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle X L3 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L1 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L1 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L1 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L1 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L1 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L1 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L2 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L2 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L2 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L2 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L2 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L2 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L3 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L3 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L3 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L3 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L3 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Y L3 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L1 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L1 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L1 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L1 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L1 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L1 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L2 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L2 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L2 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L2 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L2 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L2 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L3 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L3 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L3 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L3 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L3 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Driving axle Z L3 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L1 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L1 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L1 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L1 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L1 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L1 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L2 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L2 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L2 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L2 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L2 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L2 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L3 - kurtosis": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L3 - max": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L3 - mean": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L3 - min": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L3 - skew": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        },
+        "Current - Spindle L3 - std": {
+          "type": "number",
+          "minimum": -1000000000000.0,
+          "maximum": 1000000000000.0
+        }
+      }
+    }
+  }
+}

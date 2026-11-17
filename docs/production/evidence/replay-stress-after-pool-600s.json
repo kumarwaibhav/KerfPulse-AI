@@ -1,0 +1,28 @@
+{
+  "measurement": "gateway creation through MQTT, PostgreSQL and HTTP SSE consumption",
+  "seconds": 600,
+  "concurrent_replays": 12,
+  "completed_generations": 928,
+  "events": 46439,
+  "events_per_second": 77.39833333333333,
+  "events_per_minute_window": [
+    4823,
+    5717,
+    5492,
+    4360,
+    4000,
+    5126,
+    3864,
+    4501,
+    4890,
+    3666
+  ],
+  "sse_ms": {
+    "p50": 196.454,
+    "p95": 386.826,
+    "p99": 714.671
+  },
+  "ingest_p95_ms": 188.947,
+  "failures": [],
+  "target_passed": true
+}

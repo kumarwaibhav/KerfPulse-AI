@@ -1,0 +1,18 @@
+[
+  {
+    "Path": "E:\\pdm_aiiot\\pdm\\store.py",
+    "Hash": "23A1DDD35C10CA9E939FD106550FF6EF90AEA61CE4E8BD787250160071F059C7"
+  },
+  {
+    "Path": "E:\\pdm_aiiot\\pdm\\fresh_api.py",
+    "Hash": "696A0F924AF533EA9897ED38431D5774D7FEBEB07BB5AB9EC9FC0B8965C0CABE"
+  },
+  {
+    "Path": "E:\\pdm_aiiot\\pdm\\fresh_model.py",
+    "Hash": "6726B328C67886FAE3114C0139164271A97BC51D0093FC5A81A5A9517A6397F6"
+  },
+  {
+    "Path": "E:\\pdm_aiiot\\artifacts\\engineering-release\\model.json",
+    "Hash": "03A14D41F0C03780E8AC20D5E7FED7175C4BC83AA4BF92CDA9D3CC6B922DA02B"
+  }
+]

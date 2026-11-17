@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-17T07:00:58.650180+00:00",
+  "workload": "Repeated real publisher feature vector; new event/tool identities; demonstration clock. Not physical telemetry.",
+  "path": "HTTP -> release inference -> PostgreSQL assessment commit -> HTTP response",
+  "offered_rate_per_second": 10,
+  "offered_events": 300,
+  "schedule_seconds": 30,
+  "elapsed_seconds": 29.920675400004257,
+  "successful_events": 300,
+  "error_count": 0,
+  "unique_assessments": 300,
+  "stored_assessments": 300,
+  "completed_per_second": 10.02651163415774,
+  "request_latency": {
+    "p50_ms": 20.04250000754837,
+    "p95_ms": 61.00240000523627,
+    "max_ms": 127.24560000060592
+  },
+  "scheduled_to_response": {
+    "p50_ms": 20.734699995955452,
+    "p95_ms": 62.59709999721963,
+    "max_ms": 131.1818999965908
+  },
+  "errors": [],
+  "limits": "Short bounded HTTP test. No sustained 600-second or event-to-SSE capacity claim. Four demo session owners, 32 clients maximum."
+}

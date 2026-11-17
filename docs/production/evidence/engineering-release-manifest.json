@@ -1,0 +1,86 @@
+{
+  "release": "haas-current-engineering-v1",
+  "digest": "03a14d41f0c03780e8ac20d5e7fed7175c4bc83aa4bf92cda9d3cc6b922da02b",
+  "source_sha256": "e125471f983e98ae326e2c47e15f633bb30738e285b9ad6e54b5e364d4d66dbc",
+  "training_tools": [
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    101,
+    102,
+    103,
+    105
+  ],
+  "excluded_tools": [
+    2,
+    4
+  ],
+  "eligible_training_rows": 867,
+  "no_eligible_rows_tools": [
+    11
+  ],
+  "build": {
+    "python": "3.12.10",
+    "scikit_learn": "1.8.0",
+    "script_sha256": "5696b1915082c2665546615472de2c40bfbe2a35eb50cc607e478bace78bc766"
+  },
+  "feature_schema_version": "haas-cut-summary-v1",
+  "sensor_profile_version": "piecuch-haas-vf1-summary-v1",
+  "supported_recipes": [
+    [
+      1.0,
+      5.0,
+      4.5,
+      80.0
+    ],
+    [
+      1.0,
+      5.0,
+      8.0,
+      80.0
+    ],
+    [
+      1.0,
+      10.0,
+      4.5,
+      80.0
+    ],
+    [
+      1.0,
+      10.0,
+      4.5,
+      160.0
+    ],
+    [
+      1.0,
+      10.0,
+      8.0,
+      80.0
+    ],
+    [
+      2.0,
+      5.0,
+      4.5,
+      80.0
+    ],
+    [
+      2.0,
+      10.0,
+      4.5,
+      80.0
+    ]
+  ],
+  "calibration_status": "benchmark estimate; plant calibration pending",
+  "approval": "engineering demonstration only",
+  "parameters": {
+    "C": 0.01,
+    "selection": "fixed from previously recorded baseline; reused benchmark is development evidence"
+  },
+  "target": "published cutter damage",
+  "horizon": "1..8 further cuts and greater than 8",
+  "predecessor": null
+}

@@ -1,0 +1,15 @@
+.venv
+.venv-gpu
+.research-cache
+**/__pycache__
+.pytest_cache
+web/node_modules
+web/dist
+.env
+data/*.sqlite3*
+.git
+tests
+test-results
+release
+web/test-results
+playwright-report

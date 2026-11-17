@@ -1,0 +1,65 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: kerfpulse
+      POSTGRES_USER: kerfpulse
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kerfpulse -d kerfpulse"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  mqtt:
+    image: eclipse-mosquitto:2
+    volumes:
+      - ./deploy/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - mqtt-data:/mosquitto/data
+    healthcheck:
+      test: ["CMD", "mosquitto_pub", "-h", "localhost", "-t", "health", "-m", "ready"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  api:
+    build: .
+    image: kerfpulse:local
+    ports:
+      - "127.0.0.1:${PDM_HTTP_PORT:-8000}:8000"
+    environment: &runtime
+      PDM_DATABASE_URL: postgresql://kerfpulse:${POSTGRES_PASSWORD}@postgres:5432/kerfpulse
+      MQTT_HOST: mqtt
+      PDM_MODEL_DIR: artifacts/nested-workpiece
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mqtt:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=2).close()"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+  worker:
+    image: kerfpulse:local
+    pull_policy: never
+    command: ["python", "-m", "pdm.worker"]
+    environment: *runtime
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+  gateway:
+    image: kerfpulse:local
+    pull_policy: never
+    command: ["python", "-m", "pdm.gateway"]
+    environment: *runtime
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  postgres-data:
+  mqtt-data:

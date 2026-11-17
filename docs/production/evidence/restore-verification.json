@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-17T07:20:50.9809683Z",
+  "method": "Consistent pg_dump; isolated PostgreSQL restore, no network or published ports",
+  "duration_seconds": 70.902,
+  "backup_sha256": "D244E5D27B76B1EC025B1A721019FE17A1617531CD9F1954222C8E49EC304595",
+  "counts": {
+    "assessments": 606,
+    "sessions": 65,
+    "readings": 54055,
+    "conflicts": 0,
+    "orphan_assessments": 0
+  },
+  "verified_evidence_digests": 606,
+  "limitations": "Local unencrypted private backup rehearsal; not production encryption, identity restoration, full application recovery, or cloud RPO/RTO acceptance"
+}

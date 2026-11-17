@@ -1,0 +1,20 @@
+{
+  "sequential_transactions": 10,
+  "sequential_backend_count": 2,
+  "concurrent_transactions": 40,
+  "concurrent_backend_count": 7,
+  "rollback_recovery": "passed",
+  "pool": {
+    "requests_num": 52,
+    "requests_queued": 39,
+    "connections_num": 8,
+    "connections_ms": 211,
+    "requests_wait_ms": 1609,
+    "usage_ms": 631,
+    "pool_min": 1,
+    "pool_max": 8,
+    "pool_size": 8,
+    "pool_available": 8,
+    "requests_waiting": 0
+  }
+}
