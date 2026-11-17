@@ -17,6 +17,8 @@ from typing import Literal
 from pdm import dataset
 from pdm.store import Store, StoreError
 from pdm.fresh_api import build_router, initialize_fresh
+from pdm.device_ingest import DeviceIngest
+from pdm.device_api import router_for
 
 
 COOKIE = "pdm_session"
@@ -82,12 +84,14 @@ class OrderInput(BaseModel):
 
 def create_app(database_url=None):
     store = Store(database_url)
+    devices = DeviceIngest(store)
     streams = {}
 
     @asynccontextmanager
     async def lifespan(app):
         store.initialize()
         initialize_fresh(store)
+        devices.initialize()
         try:
             yield
         finally:
@@ -96,6 +100,8 @@ def create_app(database_url=None):
     app = FastAPI(title="KerfPulse replay API", version="1.0.0", lifespan=lifespan)
     app.add_middleware(BodyLimitMiddleware)
     app.state.store = store
+    app.state.devices = devices
+    app.include_router(router_for(devices))
 
     @app.middleware("http")
     async def boundary(request, call_next):

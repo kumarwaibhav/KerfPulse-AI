@@ -1,0 +1,26 @@
+{
+  "source_sha256": "e125471f983e98ae326e2c47e15f633bb30738e285b9ad6e54b5e364d4d66dbc",
+  "rows": 128,
+  "purpose": "Runtime verification only; training observations, not efficacy evaluation",
+  "python": "3.12.10",
+  "torch": "2.10.0+cu128",
+  "cuda_runtime": "12.8",
+  "xgboost": "3.4.1",
+  "torch_device": "cuda:0",
+  "xgboost_device": "cuda:0",
+  "training_steps": 20,
+  "amp_max_logit_difference": 0.0013898015022277832,
+  "torch_peak_allocated_bytes": 18170368,
+  "seconds": 2.913461999996798,
+  "hardware": {
+    "at": 1794920761.1455412,
+    "ram_available": 3007242240,
+    "commit_available": 14935248896,
+    "gpu_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_free": 7426015232.0,
+    "gpu_used": 917504000.0,
+    "temperature": 51.0,
+    "driver": "592.00",
+    "thermal_limit": 80
+  }
+}

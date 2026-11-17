@@ -1,0 +1,20 @@
+{
+  "repository_commit": "d60581d6a3ab6015dcc5488c3d76112bb8e1bcb1",
+  "commit_tree_sha": "2d76c91b0a260f7d42ad55093ba29d0d76b027bd",
+  "manifest_sha_field": "d60581d6a3ab6015dcc5488c3d76112bb8e1bcb1",
+  "file": "data/M01/OP00/good/M01_Aug_2019_OP00_000.h5",
+  "bytes": 1434336,
+  "publisher_git_blob_sha1": "ef68831dfa5823df9ce26fcaa772dbb8a01e0c09",
+  "sha256": "2f08bdf2b57c9a61d2f2026458c2f6e4396c14bcfc4bd713dee6002f67517df0",
+  "hdf5_datasets": [
+    {
+      "name": "vibration_data",
+      "shape": [
+        268288,
+        3
+      ],
+      "dtype": "float64"
+    }
+  ],
+  "status": "One authentic raw file verified; no anomaly model trained or independent cutter-damage validation"
+}

@@ -1,0 +1,75 @@
+{
+  "source_sha256": "e125471f983e98ae326e2c47e15f633bb30738e285b9ad6e54b5e364d4d66dbc",
+  "protocol": "workpiece",
+  "methods": [
+    "age_only",
+    "context",
+    "logistic",
+    "current_no_age",
+    "xgboost",
+    "mlp"
+  ],
+  "trials": 3,
+  "seeds": [
+    17
+  ],
+  "runner_sha256": "c69e556df6d5ec159c08432620da828966559fff91ed2a44ff92030267159286",
+  "metrics": {
+    "age_only": [
+      {
+        "seed": 17,
+        "n": 952,
+        "positives": 60,
+        "average_precision": 0.15718312177480512,
+        "brier": 0.06131438202019792
+      }
+    ],
+    "context": [
+      {
+        "seed": 17,
+        "n": 952,
+        "positives": 60,
+        "average_precision": 0.1507205875778753,
+        "brier": 0.060701824056515856
+      }
+    ],
+    "logistic": [
+      {
+        "seed": 17,
+        "n": 952,
+        "positives": 60,
+        "average_precision": 0.32740864744518444,
+        "brier": 0.050216926292319025
+      }
+    ],
+    "current_no_age": [
+      {
+        "seed": 17,
+        "n": 952,
+        "positives": 60,
+        "average_precision": 0.3286387587058598,
+        "brier": 0.05018916871811141
+      }
+    ],
+    "xgboost": [
+      {
+        "seed": 17,
+        "n": 952,
+        "positives": 60,
+        "average_precision": 0.32243819523354805,
+        "brier": 0.05104725681446021
+      }
+    ],
+    "mlp": [
+      {
+        "seed": 17,
+        "n": 952,
+        "positives": 60,
+        "average_precision": 0.32669910572960037,
+        "brier": 0.06292787338147884
+      }
+    ]
+  },
+  "interpretation": "Nested grouped development evidence on previously explored benchmark; no factory or superiority claim",
+  "resume": "Completed folds and trials reused only with identical configuration/code hash; interrupted trial restarts deterministically"
+}
