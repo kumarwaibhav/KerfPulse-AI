@@ -7,7 +7,7 @@ type Source = { device_id: string; asset_id: string; site_id: string; health: st
 type Health = { workspace_id: string; sources: Source[]; access: string };
 const words = (value: string) => value.replaceAll('_', ' ');
 
-export function SourceHealth() {
+export function SourceHealth({ endpoint = '/api/fresh/source-health', named = false }: { endpoint?: string; named?: boolean }) {
   const [health, setHealth] = useState<Health | null>(null);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
@@ -15,7 +15,7 @@ export function SourceHealth() {
   async function refresh() {
     setBusy(true);
     try {
-      const response = await fetch('/api/fresh/source-health');
+      const response = await fetch(endpoint);
       if (!response.ok) throw new Error('Source health unavailable. Retry when service recovers.');
       setHealth(await response.json()); setError('');
     } catch (e) { setError(String(e)); }
@@ -31,7 +31,7 @@ export function SourceHealth() {
     {error && <p role="alert">{error} Previously displayed status may be outdated.</p>}
     {!health && !error && <p role="status">Loading source access…</p>}
     {health && !health.sources.length && <p>No sources assigned to this workspace. Physical commissioning pending; no live factory connection is established.</p>}
-    {health && <details><summary>Local evaluation source access</summary><p>Ask local administrator to grant sources to this workspace. This identifier grants no login access by itself. Customer identity integration remains pending.</p>
+    {health && !named && <details><summary>Local evaluation source access</summary><p>Ask local administrator to grant sources to this workspace. This identifier grants no login access by itself. Customer identity integration remains pending.</p>
       <code style={{ overflowWrap: 'anywhere' }}>{health.workspace_id}</code>
       <button className="button secondary" onClick={async () => { try { await navigator.clipboard.writeText(health.workspace_id); setCopied(true); } catch { setError('Copy unavailable. Select workspace identifier above.'); } }}>{copied ? 'Workspace ID copied' : 'Copy workspace ID'}</button>
     </details>}

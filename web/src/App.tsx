@@ -5,8 +5,9 @@ import { useRun } from './useRun';
 import { RiskChart } from './Chart';
 import { MachineStage } from './MachineStage';
 import { Fresh } from './Fresh';
+import { Operations } from './Operations';
 
-type View = 'floor' | 'analytics' | 'evidence' | 'source' | 'fresh';
+type View = 'floor' | 'analytics' | 'evidence' | 'source' | 'fresh' | 'operations';
 type Health = Awaited<ReturnType<typeof api.health>>;
 const number = new Intl.NumberFormat('en-US');
 const percent = (value: number | null | undefined) => typeof value === 'number' && Number.isFinite(value) ? Math.round(value * 100) + '%' : '—';
@@ -86,7 +87,7 @@ function ConfigDialog({ tools, onClose, onStart, busy }: { tools: Tool[]; onClos
 }
 
 export default function App() {
-  const [view, setView] = useState<View>('floor');
+  const [view, setView] = useState<View>(new URLSearchParams(window.location.search).get('workspace') === 'operations' ? 'operations' : 'floor');
   const [theme, setTheme] = useState<'light' | 'dark'>(() => localStorage.getItem('kerfpulse-theme') === 'dark' ? 'dark' : 'light');
   const [tools, setTools] = useState<Tool[]>([]);
   const [runs, setRuns] = useState<Run[]>([]);
@@ -95,6 +96,7 @@ export default function App() {
   const [role, setRole] = useState<'planner' | 'viewer'>('viewer');
   const [health, setHealth] = useState<Health | null>(null);
   const [loading, setLoading] = useState(true);
+  const demoStarted = useRef(false);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [configOpen, setConfigOpen] = useState(false);
@@ -119,7 +121,7 @@ export default function App() {
   const openOrders = snapshot?.work_orders.filter((order) => ['draft', 'approved'].includes(order.status)) ?? [];
   const planned = openOrders[0];
   const dark = theme === 'dark';
-  const title = { floor: 'Shop floor', analytics: 'Performance', evidence: 'Evidence audit', source: 'Data & method', fresh: 'New cut assessment' }[view];
+  const title = { floor: 'Shop floor', analytics: 'Performance', evidence: 'Evidence audit', source: 'Data & method', fresh: 'New cut assessment', operations: 'Operations' }[view];
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -142,15 +144,21 @@ export default function App() {
     } catch (failure) { setError(errorMessage(failure)); }
     finally { setLoading(false); }
   }, []);
-  useEffect(() => { void initialize(); }, [initialize]);
+  useEffect(() => {
+    if (view !== 'operations' && !demoStarted.current) {
+      demoStarted.current = true;
+      void initialize();
+    }
+  }, [initialize, view]);
 
   useEffect(() => {
+    if (view === 'operations') return;
     const timer = window.setInterval(() => {
       void api.health().then(setHealth).catch(() => setHealth(null));
       void api.runs().then(setRuns).catch(() => {});
     }, 5000);
     return () => window.clearInterval(timer);
-  }, []);
+  }, [view]);
   useEffect(() => {
     if (loading) return;
     if (activeId) sessionStorage.setItem('kerfpulse-active-run', activeId);
@@ -224,14 +232,16 @@ export default function App() {
       <div className="rail-bottom"><button className="rail-button" onClick={() => setView('source')} aria-label="Research provenance" title="Research provenance"><CircleHelp size={20} /></button><div className="avatar">KP</div></div>
     </aside>
     <div className="workspace">
-      <header className="topbar"><Brand /><span className="header-divider" /><span className="workspace-label">Machining intelligence <ChevronDown size={13} /></span><div className="topbar-actions"><div className="telemetry-label"><span className="small-dot orange" />{view === 'fresh' ? 'Completed-cut assessment' : 'Recorded telemetry replay'}</div><div className="theme-switch" aria-label="Color theme"><button className={!dark ? 'selected' : ''} onClick={() => setTheme('light')} aria-label="Light theme" aria-pressed={!dark}><Sun size={15} /></button><button className={dark ? 'selected' : ''} onClick={() => setTheme('dark')} aria-label="Dark theme" aria-pressed={dark}><Moon size={15} /></button></div><span className="role-badge">{role === 'planner' ? 'Planner' : 'Viewer'}</span></div></header>
+      <header className="topbar"><Brand /><span className="header-divider" /><span className="workspace-label">Machining intelligence <ChevronDown size={13} /></span><div className="topbar-actions"><div className="telemetry-label"><span className="small-dot orange" />{view === 'operations' ? 'Named operational access' : view === 'fresh' ? 'Completed-cut assessment' : 'Recorded telemetry replay'}</div><div className="theme-switch" aria-label="Color theme"><button className={!dark ? 'selected' : ''} onClick={() => setTheme('light')} aria-label="Light theme" aria-pressed={!dark}><Sun size={15} /></button><button className={dark ? 'selected' : ''} onClick={() => setTheme('dark')} aria-label="Dark theme" aria-pressed={dark}><Moon size={15} /></button></div><span className="role-badge">{view === 'operations' ? 'Named access' : role === 'planner' ? 'Planner' : 'Viewer'}</span></div></header>
       <main>
-        <div className="page-heading"><div><div className="breadcrumb">Workspace <ChevronRight size={12} /> Steel machining <ChevronRight size={12} /><span>{title}</span></div><h1>{title}<span className="heading-dot">.</span></h1><p>{view === 'floor' ? 'Every cut. A clearer maintenance decision.' : view === 'analytics' ? 'Compare warning timing with evidence use and review workload.' : view === 'evidence' ? 'Trace each recommendation to its completed cut and model.' : view === 'fresh' ? 'New evidence. Traceable forecasts. Human decisions.' : 'Measured tool lives. Explicit evaluation boundaries.'}</p></div><div className="heading-actions">{run && <a href={api.export(run.id)} download className="button secondary"><ArrowDownToLine size={15} /><span>Export run</span></a>}<button className="button primary" onClick={() => setConfigOpen(true)} disabled={loading || !tools.length || role !== 'planner'}><Plus size={16} />New replay</button></div></div>
-        {(error || selected.error || comparison.error) && <div className="error-banner" role="alert"><Unplug size={17} /><span>{error || selected.error || comparison.error}</span><button onClick={() => { setError(null); selected.refresh(); if (!tools.length) void initialize(); }}>Retry</button><button className="tiny-icon" onClick={() => setError(null)} aria-label="Dismiss error"><X size={15} /></button></div>}
-        {loading && <div className="loading-banner"><LoaderCircle size={17} className="spin" />Connecting to the replay service…</div>}
+        <div className="page-heading"><div><div className="breadcrumb">Workspace <ChevronRight size={12} /> Steel machining <ChevronRight size={12} /><span>{title}</span></div><h1>{title}<span className="heading-dot">.</span></h1><p>{view === 'floor' ? 'Every cut. A clearer maintenance decision.' : view === 'analytics' ? 'Compare warning timing with evidence use and review workload.' : view === 'evidence' ? 'Trace each recommendation to its completed cut and model.' : view === 'fresh' ? 'New evidence. Traceable forecasts. Human decisions.' : view === 'operations' ? 'Assigned machines. Traceable source health. Named access.' : 'Measured tool lives. Explicit evaluation boundaries.'}</p></div><div className="heading-actions">{view !== 'operations' && <>{run && <a href={api.export(run.id)} download className="button secondary"><ArrowDownToLine size={15} /><span>Export run</span></a>}<button className="button primary" onClick={() => setConfigOpen(true)} disabled={loading || !tools.length || role !== 'planner'}><Plus size={16} />New replay</button></>}</div></div>
+        {view !== 'operations' && (error || selected.error || comparison.error) && <div className="error-banner" role="alert"><Unplug size={17} /><span>{error || selected.error || comparison.error}</span><button onClick={() => { setError(null); selected.refresh(); if (!tools.length) void initialize(); }}>Retry</button><button className="tiny-icon" onClick={() => setError(null)} aria-label="Dismiss error"><X size={15} /></button></div>}
+        {loading && view !== 'operations' && <div className="loading-banner"><LoaderCircle size={17} className="spin" />Connecting to the replay service…</div>}
 
-        <button className="button primary" style={{ marginBottom: 20 }} onClick={() => setView('fresh')}>Score a New Cut</button>
-        {view === 'fresh' && <Fresh />}
+        <button className="button primary" style={{ marginBottom: 20 }} disabled={loading && view !== 'operations'} onClick={() => setView('fresh')}>Score a New Cut</button>
+        <button className="button secondary" style={{ marginBottom: 20, marginLeft: 12 }} onClick={() => setView('operations')}>Operations workspace</button>
+        {view === 'operations' && <Operations />}
+        {view === 'fresh' && !loading && <Fresh />}
         {view === 'floor' && <>
           <div className="run-toolbar"><div className="run-context"><span className={'status-indicator ' + (run?.state ?? 'ready')} /><strong>{run ? 'Cutter ' + String(run.tool_id).padStart(2, '0') : 'No active replay'}</strong><span className="toolbar-separator" /><span>{run ? policyNames[run.policy] : 'Haas VF-1 · 42CrMo4'}</span>{run && <span className={'status-tag ' + run.state}>{run.state}</span>}</div><div className="run-controls"><span className="connection-label"><span className={'small-dot ' + (selected.connection === 'connected' ? 'green' : '')} />{streamLabel}</span>{run && <><button className="icon-button" onClick={() => void control(run.state === 'running' ? 'pause' : 'resume')} disabled={busy || role !== 'planner' || run.state === 'completed'} aria-label={run.state === 'running' ? 'Pause replay' : 'Resume replay'} title={run.state === 'running' ? 'Pause replay' : 'Resume replay'}>{run.state === 'running' ? <Pause size={15} /> : <Play size={15} />}</button><button className="icon-button" onClick={() => void control('restart')} disabled={busy || role !== 'planner'} aria-label="Restart replay" title="Restart replay"><RotateCcw size={15} /></button></>}</div></div>
           <div className={'floor-grid' + (!queueOpen ? ' queue-collapsed' : '')}><MachineStage run={run} latest={latestCut} tool={tool} remainingBudget={Math.max(0, quota - released)} /><section className="queue-panel panel"><div className="panel-heading"><div><Bell size={17} /><h2>Inspection queue</h2><span className="count-badge">{openOrders.length}</span></div><button className="tiny-icon queue-collapse" onClick={() => setQueueOpen(!queueOpen)} aria-label={queueOpen ? 'Collapse inspection queue' : 'Expand inspection queue'}><ChevronRight size={17} /></button></div>{queueOpen && <div className="queue-body">{snapshot?.work_orders.length ? snapshot.work_orders.map((order) => <OrderCard key={order.id} order={order} planner={role === 'planner'} onAction={(item, action) => void orderAction(item, action)} busy={busy} />) : <Empty icon={<FileCheck2 size={25} />} title="No inspection requested">{run ? 'A draft appears when the model finds a feasible inspection window.' : 'Start a cutter replay to follow evidence into a planned inspection.'}</Empty>}<div className="queue-note"><Clock3 size={15} /><div><strong>{run ? 'Break every ' + run.slot_interval + ' cycle positions' : 'Production-aware planning'}</strong><p>Slots use the replay calendar. Planner approval is recorded.</p></div></div></div>}</section></div>
@@ -261,7 +271,7 @@ export default function App() {
           <section className="panel source-credits"><h3>Dataset attribution</h3><p>Grzegorz Piecuch and Tomasz Żabiński, <em>A new open dataset from a milling process – data for classification and estimation of tool life</em>, Scientific Data 12, 650 (2025). Adaptations include parsing, feature selection, duplicate quarantine, and replay. Dataset © its creators under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>.</p><p>Model estimates describe this benchmark. The showcase records inspection decisions against archived outcomes. Field validation and customer-specific commissioning remain deployment milestones.</p></section>
         </div>}
 
-        <footer><span>Precision in every signal. Certainty in every shift.</span><div><span className={'small-dot ' + (workerFresh ? 'green' : '')} />{workerFresh ? 'MQTT worker online' : health ? 'Service online' : 'Service unavailable'}<span>·</span><span>CC BY 4.0 source data</span></div></footer>
+        <footer><span>Precision in every signal. Certainty in every shift.</span><div><span className={'small-dot ' + (view !== 'operations' && workerFresh ? 'green' : '')} />{view === 'operations' ? 'Source status shown per assigned machine' : workerFresh ? 'MQTT worker online' : health ? 'Service online' : 'Service unavailable'}<span>·</span><span>CC BY 4.0 source data</span></div></footer>
       </main>
     </div>
     {configOpen && <ConfigDialog tools={tools} onClose={() => setConfigOpen(false)} onStart={start} busy={busy} />}

@@ -1,6 +1,7 @@
 .venv/
 .venv-gpu/
 .research-cache/
+.code-review-graph/
 *.pem
 *.key
 __pycache__/

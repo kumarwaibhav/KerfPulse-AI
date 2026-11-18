@@ -1,5 +1,9 @@
 # CUDA research and production execution ledger
 
+## Current continuation pointer — 18 November 2026
+
+Latest work: eleven-repository source audit, named OIDC/exact read scopes and source-health corrections, actual local Keycloak journey, isolated browser harness, Bosch raw integrity/partitioning, and saved first-stop diagnostic. See current [pipeline checkpoint](pipeline-stage-checkpoint.md), [staged plan](staged-development-plan-2026-11-18.md) and [research synthesis](../research/repository-review-2026-11-18/README.md). Detailed historical entries below remain preserved. Follow-up agents hit usage limits; primary agent completed implementation directly. No independent implementation sign-off is claimed for those final additions.
+
 ## Accepted scope
 
 Software-only, private local deployment; free/open-source dependencies. User authorizes RTX 4060 Laptop GPU and available RAM. No physical commissioning or predictive superiority may be asserted without evidence. Existing demo and research artifacts remain preserved.
@@ -86,3 +90,6 @@ Expanded comparison finished; matched fingerprint resume verified. Acquisition-r
 Source registry, shadow-only release binding, fail-closed expiry/digest/profile/revocation, historical snapshots, explicit workspace read grants and source-health operator UI implemented. Actual PostgreSQL isolated-schema verification and eight browser scenarios passed; 84 Python tests passed before final diagnostic checks. No actual plant source qualified.
 
 Final qualification stage verification: 84 Python tests passed (24.69 s), eight browser scenarios passed (42.2 s), PostgreSQL isolated integration passed including granted operator source health. New source/tests/reports committed; archives refreshed. Full plan remains incomplete; no superiority, advisory release or factory commissioning claimed.
+
+
+Final continuation checks:110 Python tests passed,1 optional h5py skip,1 existing TestClient warning (29.06s). Five raw/audit tests passed in research environment; final nine browser scenarios passed in39.6s. Actual local Keycloak and PostgreSQL operational integration passed. Full npm audit retains4 high package entries from one unpatched build-tool Picomatch advisory; production npm/runtime Python scans had no known findings. See identity-research-verification-2026-11-18.md. No new model training/promotion or physical commissioning claimed.

@@ -1,0 +1,13 @@
+{
+  "provider": "Actual local Keycloak profile",
+  "protocol": "Authorization code, PKCE S256, signed RS256 ID token",
+  "browser_login": "passed",
+  "default_no_grants": "passed",
+  "scoped_empty_sources": "passed",
+  "csrf_denial": "passed",
+  "browser_logout": "passed",
+  "post_logout_denial": "passed",
+  "browser_errors": [],
+  "physical_source": "Not commissioned; no device or source grant created",
+  "recorded_at": "2026-11-18T01:52:53.820Z"
+}

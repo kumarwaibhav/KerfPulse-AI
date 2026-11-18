@@ -2,6 +2,8 @@
 
 These documents distinguish implemented and verified software from planned plant capabilities. Start with the checkpoint and claims register. The full KP-001..017 scope is not complete in production.
 
+Latest continuation: [current pipeline evidence](pipeline-stage-checkpoint.md), [staged development plan](staged-development-plan-2026-11-18.md), [named access](named-access-and-identity.md), [eleven-project research](../research/repository-review-2026-11-18/README.md), and [security/verification update](identity-research-verification-2026-11-18.md). Older snapshots below remain historical.
+
 | Document | Purpose |
 |---|---|
 | [Current checkpoint](continuation-checkpoint.md) | Actual code, commands, results and next critical path |

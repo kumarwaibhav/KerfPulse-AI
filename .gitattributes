@@ -1,0 +1,3 @@
+# Research provenance hashes source bytes. Preserve their recorded line endings.
+* text=auto whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+pdm/*.py -text

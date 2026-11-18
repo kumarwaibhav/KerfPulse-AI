@@ -70,24 +70,50 @@ class QualificationRegistry:
     def health(self,owner):
         with self.store.transaction() as conn:
             sources=self.store.execute(conn,'SELECT d.* FROM ingest_devices d JOIN operator_source_grants g ON g.device_id=d.id WHERE g.owner=? ORDER BY d.id',(owner,)).fetchall()
-            result=[]
-            for device in sources:
-                row=self.store.execute(conn,'SELECT * FROM ingest_receipts WHERE device_id=? ORDER BY received_at DESC,id DESC LIMIT 1',(device['id'],)).fetchone()
-                reasons=[]
-                event=json.loads(row['envelope'])['event'] if row else {}
-                binding=self.resolve(conn,device,event) if row else self.resolve(conn,device,{'feature_schema_version':'','sensor_profile_version':''})
-                if not binding['eligible']:reasons.append(binding['reason'])
-                if not row:reasons.append('no_observations')
-                else:
-                    arrival_age=(datetime.now(timezone.utc)-datetime.fromisoformat(row['received_at'])).total_seconds()
-                    if arrival_age>60:reasons.append('no_recent_receipts')
-                    age=(datetime.now(timezone.utc)-datetime.fromisoformat(event['cut_completed_at'].replace('Z','+00:00'))).total_seconds()
-                    if age>300:reasons.append('stale_observation')
-                    if row['sequence_status']!='contiguous':reasons.append('transport_'+row['sequence_status'])
-                processed=self.store.execute(conn,'SELECT payload FROM operational_processing WHERE receipt_id=?',(row['id'],)).fetchone() if row else None
-                assessment=json.loads(processed['payload']) if processed else None
-                result.append({'device_id':device['id'],'org_id':device['org_id'],'site_id':device['site_id'],'asset_id':device['asset_id'],
-                               'qualification':binding,'health':'attention_required' if reasons else 'shadow_only','reason_codes':reasons,
-                               'last_received_at':row['received_at'] if row else None,'evidence_cutoff':event.get('cut_completed_at'),
-                               'processing':assessment,'physical_connection':'uncommissioned','source_mode':'device_uploaded_measurements'})
-            return result
+            return self._health(connection=conn,sources=sources)
+
+    def health_for_devices(self,device_ids):
+        with self.store.transaction() as conn:
+            sources=[]
+            for device_id in device_ids:
+                row=self.store.execute(conn,'SELECT * FROM ingest_devices WHERE id=?',(device_id,)).fetchone()
+                if row:sources.append(row)
+            return self._health(connection=conn,sources=sources)
+
+    def _health(self,connection,sources):
+        conn=connection
+        result=[]
+        for device in sources:
+            row=self.store.execute(conn,'SELECT * FROM ingest_receipts WHERE device_id=? ORDER BY received_at DESC,id DESC LIMIT 1',(device['id'],)).fetchone()
+            reasons=[]
+            event=json.loads(row['envelope'])['event'] if row else {}
+            binding=self.resolve(conn,device,event) if row else self.resolve(conn,device,{'feature_schema_version':'','sensor_profile_version':''})
+            if not binding['eligible']:reasons.append(binding['reason'])
+            if not row:reasons.append('no_observations')
+            else:
+                arrival_age=(datetime.now(timezone.utc)-datetime.fromisoformat(row['received_at'])).total_seconds()
+                if arrival_age>60:reasons.append('no_recent_receipts')
+                age=(datetime.now(timezone.utc)-datetime.fromisoformat(event['cut_completed_at'].replace('Z','+00:00'))).total_seconds()
+                if age>300:reasons.append('stale_observation')
+                if row['sequence_status']!='contiguous':reasons.append('transport_'+row['sequence_status'])
+            processed=self.store.execute(conn,'SELECT payload FROM operational_processing WHERE receipt_id=?',(row['id'],)).fetchone() if row else None
+            assessment=json.loads(processed['payload']) if processed else None
+            if assessment is None and row:
+                reasons.append('processing_pending')
+            elif assessment is not None:
+                stored=assessment.get('assessment') or {}
+                if assessment['state'] in ('rejected','blocked','superseded','quarantined'):
+                    reasons.append(assessment.get('reason','processing_'+assessment['state']))
+                if stored.get('applicability') and stored.get('applicability')!='assessed':
+                    reasons.extend(stored.get('reason_codes',[]))
+                old_binding=stored.get('qualification')
+                if old_binding and old_binding.get('id')!=binding.get('id'):
+                    reasons.append('assessment_qualification_changed')
+            conflicts=self.store.execute(conn,'SELECT count(*) AS n FROM ingest_quarantine q JOIN ingest_receipts r ON r.id=q.receipt_id WHERE r.device_id=?',(device['id'],)).fetchone()['n']
+            if conflicts:reasons.append('transport_conflict_quarantined')
+            reasons=list(dict.fromkeys(reasons))
+            result.append({'device_id':device['id'],'org_id':device['org_id'],'site_id':device['site_id'],'asset_id':device['asset_id'],
+                           'qualification':binding,'health':'attention_required' if reasons else 'shadow_only','reason_codes':reasons,
+                           'last_received_at':row['received_at'] if row else None,'evidence_cutoff':event.get('cut_completed_at'),
+                           'processing':assessment,'physical_connection':'uncommissioned','source_mode':'device_uploaded_measurements'})
+        return result

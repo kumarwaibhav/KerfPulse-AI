@@ -1,5 +1,9 @@
 # KerfPulse pathway: research to qualified factory deployment
 
+## Current continuation — 18 November 2026
+
+Use [staged-development-plan-2026-11-18.md](staged-development-plan-2026-11-18.md) as current executable plan. Older sections below record earlier checkpoint. Expanded research completed with no supported superiority/policy benefit; named OIDC/read scopes and operator-source diagnostics have implementation evidence. Raw Bosch integrity and first-stop diagnostic foundations exist; new models are not trained. Engineer write workflow, reliability release gates and field commissioning remain incomplete. [Current evidence](pipeline-stage-checkpoint.md).
+
 ## Current verified position
 
 Software-only and private local deployment remain selected. Real CUDA verification and first grouped model comparison exist. No new model beat the recorded baseline, and the software has no physical commissioning evidence. The next work strengthens scientific and operational validity rather than adding unvalidated model complexity.

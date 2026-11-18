@@ -1,7 +1,13 @@
 import { expect, test } from '@playwright/test';
 
 test('source health shows default denial and scoped reasons with recovery', async ({ page }) => {
+  let releaseSession!: () => void;
+  const sessionReady = new Promise<void>(resolve => { releaseSession = resolve; });
+  await page.route('**/api/session', async route => { await sessionReady; await route.continue(); });
   await page.goto('/');
+  // Source reads require the session cookie, even when account startup is slow.
+  await expect(page.getByRole('button', { name: 'Score a New Cut', exact: true })).toBeDisabled();
+  releaseSession();
   await page.getByRole('button', { name: 'Score a New Cut', exact: true }).click();
   const panel = page.getByRole('region', { name: 'Source qualification and health' });
   await expect(panel).toContainText('No sources assigned to this workspace');

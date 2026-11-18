@@ -19,6 +19,9 @@ from pdm.store import Store, StoreError
 from pdm.fresh_api import build_router, initialize_fresh
 from pdm.device_ingest import DeviceIngest
 from pdm.device_api import router_for
+from pdm.identity import IdentityStore
+from pdm.oidc import routes as identity_routes
+from pdm.operations_api import routes as operations_routes
 
 
 COOKIE = "pdm_session"
@@ -82,9 +85,10 @@ class OrderInput(BaseModel):
     finding: str | None = Field(default=None, max_length=2000)
 
 
-def create_app(database_url=None):
+def create_app(database_url=None, *, oidc_provider_factory=None):
     store = Store(database_url)
     devices = DeviceIngest(store)
+    identity = IdentityStore(store)
     streams = {}
 
     @asynccontextmanager
@@ -92,6 +96,7 @@ def create_app(database_url=None):
         store.initialize()
         initialize_fresh(store)
         devices.initialize()
+        identity.initialize()
         try:
             yield
         finally:
@@ -101,7 +106,11 @@ def create_app(database_url=None):
     app.add_middleware(BodyLimitMiddleware)
     app.state.store = store
     app.state.devices = devices
+    app.state.identity = identity
     app.include_router(router_for(devices))
+    auth_router, named_person = identity_routes(identity,oidc_provider_factory)
+    app.include_router(auth_router)
+    app.include_router(operations_routes(store,named_person))
 
     @app.middleware("http")
     async def boundary(request, call_next):

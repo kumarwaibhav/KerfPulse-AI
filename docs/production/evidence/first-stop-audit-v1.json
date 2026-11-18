@@ -1,0 +1,834 @@
+{
+  "audit_version": 1,
+  "source_sha256": "e125471f983e98ae326e2c47e15f633bb30738e285b9ad6e54b5e364d4d66dbc",
+  "historical_report_sha256": "ea94ae89d83dec1e24476cbf1e75a376759fdb16f233768f13c0b4387430bae7",
+  "historical_configuration_sha256": "61b34760c70636459a44e702bf80ecb2a42bb8ad5dd108de547507540b88eb42",
+  "analysis_sha256": "74e3ed4b08c6e088a4c7302758f367082629bf443b7b92fcdc171d7d60103024",
+  "analysis_policy_sha256": "b39cba93d6d524c34068e7b87c3206730a0a67c00d0406f15c9b513cc8962f59",
+  "fingerprint_check": "Saved data/code/split/feature fingerprints matched",
+  "historical_fingerprint_gap": "Original configuration did not fingerprint policy.py; this audit records current outcome semantics, not historical dependency attestation",
+  "analysis_environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "numpy": "2.4.2",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.8.0",
+      "torch": null,
+      "xgboost": null,
+      "joblib": "1.6.0",
+      "threadpoolctl": "3.8.0"
+    }
+  },
+  "coverage": {
+    "supported": 5,
+    "unsupported_recipe": 8,
+    "no_pre_damage_observation": 1
+  },
+  "supported_cuts": 375,
+  "unsupported_cuts": 577,
+  "historical_budget": "ceil(n*.25); acquisition allowed from first eligible cut",
+  "next_protocol_budget": "floor(n/4); first three eligible cuts cannot acquire",
+  "historical_acquisition_scope": "Full recorded supported life, including continued loop after first inspection fixation",
+  "training": "Not run; retrospective diagnostic only",
+  "qualification": "Exploratory single-machine audit; no superiority, policy benefit or production promotion",
+  "tools": [
+    {
+      "tool_id": 2,
+      "damage_cycle": 50,
+      "cohort_status": "supported",
+      "observed_eligible_cuts": 45,
+      "supported_cuts": 45,
+      "unsupported_cuts": 0,
+      "attainable_timely_slots": [
+        45,
+        48
+      ],
+      "policies": {
+        "current": {
+          "first_slot": 33,
+          "outcome": "premature",
+          "lead_cuts": 17,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": 33,
+          "outcome": "premature",
+          "lead_cuts": 17,
+          "total_acquisitions": 45,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "periodic": {
+          "first_slot": 33,
+          "outcome": "premature",
+          "lead_cuts": 17,
+          "total_acquisitions": 10,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "random": {
+          "first_slot": 33,
+          "outcome": "premature",
+          "lead_cuts": 17,
+          "total_acquisitions": 9,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "regret_gate": {
+          "first_slot": 33,
+          "outcome": "premature",
+          "lead_cuts": 17,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 3,
+      "damage_cycle": 50,
+      "cohort_status": "unsupported_recipe",
+      "observed_eligible_cuts": 43,
+      "supported_cuts": 0,
+      "unsupported_cuts": 43,
+      "attainable_timely_slots": [],
+      "policies": {
+        "current": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "periodic": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "random": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "regret_gate": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 4,
+      "damage_cycle": 41,
+      "cohort_status": "supported",
+      "observed_eligible_cuts": 40,
+      "supported_cuts": 40,
+      "unsupported_cuts": 0,
+      "attainable_timely_slots": [
+        36,
+        39
+      ],
+      "policies": {
+        "current": {
+          "first_slot": 21,
+          "outcome": "premature",
+          "lead_cuts": 20,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": 30,
+          "outcome": "premature",
+          "lead_cuts": 11,
+          "total_acquisitions": 40,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "periodic": {
+          "first_slot": 21,
+          "outcome": "premature",
+          "lead_cuts": 20,
+          "total_acquisitions": 10,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "random": {
+          "first_slot": 21,
+          "outcome": "premature",
+          "lead_cuts": 20,
+          "total_acquisitions": 8,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "regret_gate": {
+          "first_slot": 21,
+          "outcome": "premature",
+          "lead_cuts": 20,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 5,
+      "damage_cycle": 54,
+      "cohort_status": "unsupported_recipe",
+      "observed_eligible_cuts": 50,
+      "supported_cuts": 0,
+      "unsupported_cuts": 50,
+      "attainable_timely_slots": [],
+      "policies": {
+        "current": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "periodic": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "random": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "regret_gate": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 6,
+      "damage_cycle": 30,
+      "cohort_status": "supported",
+      "observed_eligible_cuts": 27,
+      "supported_cuts": 27,
+      "unsupported_cuts": 0,
+      "attainable_timely_slots": [
+        27
+      ],
+      "policies": {
+        "current": {
+          "first_slot": 21,
+          "outcome": "premature",
+          "lead_cuts": 9,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": 21,
+          "outcome": "premature",
+          "lead_cuts": 9,
+          "total_acquisitions": 27,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "periodic": {
+          "first_slot": 21,
+          "outcome": "premature",
+          "lead_cuts": 9,
+          "total_acquisitions": 7,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "random": {
+          "first_slot": 21,
+          "outcome": "premature",
+          "lead_cuts": 9,
+          "total_acquisitions": 5,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "regret_gate": {
+          "first_slot": 21,
+          "outcome": "premature",
+          "lead_cuts": 9,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 7,
+      "damage_cycle": 127,
+      "cohort_status": "unsupported_recipe",
+      "observed_eligible_cuts": 123,
+      "supported_cuts": 0,
+      "unsupported_cuts": 123,
+      "attainable_timely_slots": [],
+      "policies": {
+        "current": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "periodic": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "random": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "regret_gate": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 8,
+      "damage_cycle": 116,
+      "cohort_status": "supported",
+      "observed_eligible_cuts": 115,
+      "supported_cuts": 115,
+      "unsupported_cuts": 0,
+      "attainable_timely_slots": [
+        111,
+        114
+      ],
+      "policies": {
+        "current": {
+          "first_slot": 102,
+          "outcome": "premature",
+          "lead_cuts": 14,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": 102,
+          "outcome": "premature",
+          "lead_cuts": 14,
+          "total_acquisitions": 115,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "periodic": {
+          "first_slot": 102,
+          "outcome": "premature",
+          "lead_cuts": 14,
+          "total_acquisitions": 28,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "random": {
+          "first_slot": 102,
+          "outcome": "premature",
+          "lead_cuts": 14,
+          "total_acquisitions": 25,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "regret_gate": {
+          "first_slot": 102,
+          "outcome": "premature",
+          "lead_cuts": 14,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 9,
+      "damage_cycle": 150,
+      "cohort_status": "supported",
+      "observed_eligible_cuts": 148,
+      "supported_cuts": 148,
+      "unsupported_cuts": 0,
+      "attainable_timely_slots": [
+        147
+      ],
+      "policies": {
+        "current": {
+          "first_slot": 69,
+          "outcome": "premature",
+          "lead_cuts": 81,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": 54,
+          "outcome": "premature",
+          "lead_cuts": 96,
+          "total_acquisitions": 148,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "periodic": {
+          "first_slot": 63,
+          "outcome": "premature",
+          "lead_cuts": 87,
+          "total_acquisitions": 37,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "random": {
+          "first_slot": 69,
+          "outcome": "premature",
+          "lead_cuts": 81,
+          "total_acquisitions": 29,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        },
+        "regret_gate": {
+          "first_slot": 66,
+          "outcome": "premature",
+          "lead_cuts": 84,
+          "total_acquisitions": 29,
+          "acquisitions_before_first_decision": null,
+          "acquisitions_after_first_decision": null,
+          "acquisition_timing_evidence": "Unavailable: historical run saved totals, not event traces"
+        }
+      }
+    },
+    {
+      "tool_id": 10,
+      "damage_cycle": 15,
+      "cohort_status": "unsupported_recipe",
+      "observed_eligible_cuts": 14,
+      "supported_cuts": 0,
+      "unsupported_cuts": 14,
+      "attainable_timely_slots": [],
+      "policies": {
+        "current": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "periodic": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "random": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "regret_gate": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 11,
+      "damage_cycle": 1,
+      "cohort_status": "no_pre_damage_observation",
+      "observed_eligible_cuts": 0,
+      "supported_cuts": 0,
+      "unsupported_cuts": 0,
+      "attainable_timely_slots": [],
+      "policies": {
+        "current": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "periodic": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "random": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "regret_gate": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 101,
+      "damage_cycle": 84,
+      "cohort_status": "unsupported_recipe",
+      "observed_eligible_cuts": 83,
+      "supported_cuts": 0,
+      "unsupported_cuts": 83,
+      "attainable_timely_slots": [],
+      "policies": {
+        "current": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "periodic": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "random": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "regret_gate": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 102,
+      "damage_cycle": 85,
+      "cohort_status": "unsupported_recipe",
+      "observed_eligible_cuts": 81,
+      "supported_cuts": 0,
+      "unsupported_cuts": 81,
+      "attainable_timely_slots": [],
+      "policies": {
+        "current": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "periodic": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "random": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "regret_gate": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 103,
+      "damage_cycle": 60,
+      "cohort_status": "unsupported_recipe",
+      "observed_eligible_cuts": 59,
+      "supported_cuts": 0,
+      "unsupported_cuts": 59,
+      "attainable_timely_slots": [],
+      "policies": {
+        "current": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "periodic": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "random": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "regret_gate": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    },
+    {
+      "tool_id": 105,
+      "damage_cycle": 125,
+      "cohort_status": "unsupported_recipe",
+      "observed_eligible_cuts": 124,
+      "supported_cuts": 0,
+      "unsupported_cuts": 124,
+      "attainable_timely_slots": [],
+      "policies": {
+        "current": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "fused": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "periodic": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "random": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        },
+        "regret_gate": {
+          "first_slot": null,
+          "outcome": "no_inspection",
+          "lead_cuts": null,
+          "total_acquisitions": 0,
+          "acquisitions_before_first_decision": 0,
+          "acquisitions_after_first_decision": 0,
+          "acquisition_timing_evidence": "Derivable: no inspection or no acquisitions"
+        }
+      }
+    }
+  ]
+}

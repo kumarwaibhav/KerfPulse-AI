@@ -1,6 +1,10 @@
 .venv
 .venv-gpu
 .research-cache
+.code-review-graph
+artifacts/private-identity
+artifacts/private-backup
+artifacts/reference-research
 **/__pycache__
 .pytest_cache
 web/node_modules

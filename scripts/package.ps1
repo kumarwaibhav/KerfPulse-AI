@@ -11,7 +11,7 @@ $items = @('pdm', 'web/src', 'web/index.html', 'web/package.json',
     'web/playwright.config.ts', 'web/tests', 'pytest.ini',
     'docs', 'tests', 'scripts', 'schemas', 'deploy', 'Dockerfile', 'compose.yaml',
     'requirements.txt', 'requirements-train.txt', 'requirements-test.txt', 'requirements-gpu.txt',
-    '.dockerignore', '.gitignore', 'README.md', 'NOTICE.md', '.env.example')
+    '.dockerignore', '.gitignore', '.gitattributes', '.github', 'README.md', 'NOTICE.md', '.env.example')
 if ($IncludeAssets) {
     $items += @('data/FeatureAndMetadata_Milling.csv', 'artifacts/nested-workpiece', 'artifacts/engineering-release')
 }

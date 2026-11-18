@@ -89,17 +89,15 @@ The candidate public profile uses Render Free and Neon Free, subject to their id
 
 ### Push the source to GitHub
 
-From the workspace root, initialize the repository and review the staged file list before publishing. The ignore rules exclude `.env`, local data, generated models, build output and release archives.
+Publication destination is the owner's [KerfPulse-AI repository](https://github.com/kumarwaibhav/KerfPulse-AI). Publish only as `kumarwaibhav`, with author and committer `Kumar Waibhav Akshat <kwa.waibhav@gmail.com>`. The helper checks account, identity, branch, destination and every commit before pushing. Ignore rules exclude credentials, runtime data, generated models, caches and archives.
 
 ```powershell
-git init -b main
-git add .
-git diff --cached --name-only
-git commit -m "Add KerfPulse AI application and research benchmark"
-gh repo create kerfpulse-ai --private --source . --remote origin --push
+git status --short
+git log --format="%h %an <%ae>"
+pwsh -NoProfile -File scripts/publish.ps1
 ```
 
-For an existing destination, add its Git URL with `git remote add origin <repository-url>` and use `git push -u origin main`. Run setup after cloning to reproduce the data and models before building the Docker image.
+Run setup after cloning to reproduce data and models before building the Docker image. Publication helper never force-pushes or publishes local backup refs.
 
 Observed test, transport, browser and package evidence is maintained in [Local release verification](docs/release-report.md). Read that report for verified status and outstanding acceptance measurements.
 
@@ -124,6 +122,9 @@ The archive is written to `release/kerfpulse-ai.zip` with a SHA-256 JSON sidecar
 | [Development roadmap](docs/06-development-roadmap.md) | Dependency milestones, validation/paper work, release tests and customer-pilot steps. |
 | [How KerfPulse works](docs/07-how-kerfpulse-works.md) | Plain-language dataset, model, architecture and dashboard walkthrough. |
 | [Performance analysis](docs/08-performance-analysis.md) | Held-out model results, decision and bandwidth tradeoffs, browser profile, sustained load and production readiness. |
+| [Eleven-project source review](docs/research/repository-review-2026-11-18/README.md) | Pinned GitHub research, actual data/model/workflow findings, licenses and adoption decisions. |
+| [Current staged delivery plan](docs/production/staged-development-plan-2026-11-18.md) | Completed foundations, next development slices, acceptance tests and remaining factory launch gates. |
+| [Named operator access](docs/production/named-access-and-identity.md) | OIDC setup, exact asset grants, local identity profile and qualification limits. |
 
 ## Data attribution
 
