@@ -89,7 +89,7 @@ The candidate public profile uses Render Free and Neon Free, subject to their id
 
 ### Push the source to GitHub
 
-Publication destination is the owner's [KerfPulse-AI repository](https://github.com/kumarwaibhav/KerfPulse-AI). Publish only as `kumarwaibhav`, with author and committer `Kumar Waibhav Akshat <kwa.waibhav@gmail.com>`. The helper checks account, identity, branch, destination and every commit before pushing. Ignore rules exclude credentials, runtime data, generated models, caches and archives.
+Publication destination is the owner's [KerfPulse-AI repository](https://github.com/kumarwaibhav/KerfPulse-AI). Publish only as `kumarwaibhav`, with author and committer `Kumar Waibhav Akshat <130293310+kumarwaibhav@users.noreply.github.com>`. The helper checks account, identity, branch, destination and every new commit before pushing. Ignore rules exclude credentials, runtime data, generated models, caches and archives. Initial published snapshot retains the formerly configured email; subsequent commits use the verified owner's noreply address without rewriting shared history.
 
 ```powershell
 git status --short

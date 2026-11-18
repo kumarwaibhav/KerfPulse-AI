@@ -56,4 +56,6 @@ Local IdP test reads generated credentials from ignored private files; it never 
 
 ## Remaining launch blockers
 
+Publication verification: first GitHub Actions run44221439456 completed successfully, reproducing measured benchmark assets, frontend build and Python checks on a clean Windows runner. Published snapshot487fc2892d5514334318a71feda9dc4de60182f9 used authenticated account kumarwaibhav and owner display name, but its configured email was linked by GitHub to profile kumar-waibhav. Future author/committer email is pinned to verified account130293310+kumarwaibhav@users.noreply.github.com. Shared history is retained; publication helper validates every later commit and the immutable baseline.
+
 Demonstrated first-inspection utility and independent-machine/prospective validity; trained/qualified raw-signal branch; complete named inspection/calendar/assignment/outcome workflow; authenticated read-only industrial adapter and extractor attestation; fresh-path load/soak/retention/encrypted restore/rollback; production identity/deployment controls; signed site acceptance. These are explicit staged work, not completed by passing the checks above.
